@@ -20,7 +20,7 @@ public class RollCallController {
             String name = rollCallService.getStudent();
             return name;
         } catch (Exception e) {
-            return "查询失败！";
+            return "异常，查询失败！";
         }
     }
 }
