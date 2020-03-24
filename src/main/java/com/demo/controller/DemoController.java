@@ -30,6 +30,7 @@ public class DemoController {
 
     /**
      * demo 新增用户
+     *
      * @param userInfo
      * @return AppResponse
      * @author dingning
@@ -53,6 +54,7 @@ public class DemoController {
 
     /**
      * demo 用户列表(分页)
+     *
      * @param userInfo
      * @return AppResponse
      * @author dingning
@@ -71,6 +73,7 @@ public class DemoController {
 
     /**
      * demo 删除用户
+     *
      * @param userCode
      * @return AppResponse
      * @author dingning
@@ -81,7 +84,7 @@ public class DemoController {
         try {
             //获取用户id
             String userId = AuthUtils.getCurrentUserId();
-            return demoService.deleteUser(userCode,userId);
+            return demoService.deleteUser(userCode, userId);
         } catch (Exception e) {
             logger.error("用户删除错误", e);
             System.out.println(e.toString());
@@ -91,6 +94,7 @@ public class DemoController {
 
     /**
      * demo 修改用户
+     *
      * @param userInfo
      * @return AppResponse
      * @author dingning
@@ -113,6 +117,7 @@ public class DemoController {
 
     /**
      * demo 查询用户详情
+     *
      * @param userCode
      * @return AppResponse
      * @author dingning

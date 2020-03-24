@@ -4,6 +4,11 @@ package com.demo.entity;
 
 import java.util.Date;
 
+/**
+ * @Description 用户实体类
+ * @Author dingning
+ * @Date 2020-03-21
+ */
 public class UserInfo {
     /**
      * 页码
