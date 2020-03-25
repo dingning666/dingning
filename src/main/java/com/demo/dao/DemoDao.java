@@ -1,7 +1,6 @@
 package com.demo.dao;
 
 import com.demo.entity.UserInfo;
-import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -12,7 +11,6 @@ import java.util.List;
  * @Author dingning
  * @Date 2020-03-21
  */
-@Mapper
 public interface DemoDao {
     /**
      * 统计用户账号数量

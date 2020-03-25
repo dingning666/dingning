@@ -11,6 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 import javax.annotation.Resource;
 import java.util.Arrays;
 import java.util.List;
+
 import com.github.pagehelper.PageInfo;
 
 /**
@@ -26,6 +27,7 @@ public class DemoService {
 
     /**
      * demo 新增用户
+     *
      * @param userInfo
      * @return
      * @Author dingning
@@ -35,21 +37,22 @@ public class DemoService {
     public AppResponse saveUser(UserInfo userInfo) {
         // 校验账号是否存在
         int countUserAcct = demoDao.countUserAcct(userInfo);
-        if(0 != countUserAcct) {
-            return AppResponse.bizError("用户账号已存在，请重新输入！");
+        if (0 != countUserAcct) {
+            return AppResponse.success("用户账号已存在，请重新输入！");
         }
         userInfo.setUserCode(StringUtil.getCommonCode(2));
         userInfo.setIsDeleted(0);
         // 新增用户
         int count = demoDao.saveUser(userInfo);
-        if(0 == count) {
-            return AppResponse.bizError("新增失败，请重试！");
+        if (0 == count) {
+            return AppResponse.success("新增失败，请重试！");
         }
         return AppResponse.success("新增成功！");
     }
 
     /**
      * demo 查询用户列表（分页）
+     *
      * @param userInfo
      * @return
      * @Author dingning
@@ -60,11 +63,12 @@ public class DemoService {
         List<UserInfo> userInfoList = demoDao.listUsersByPage(userInfo);
         // 包装Page对象
         PageInfo<UserInfo> pageData = new PageInfo<UserInfo>(userInfoList);
-        return AppResponse.success("查询成功！",pageData);
+        return AppResponse.success("查询成功！", pageData);
     }
 
     /**
      * demo 删除用户
+     *
      * @param userCode
      * @param userId
      * @return
@@ -72,19 +76,19 @@ public class DemoService {
      * @Date 2020-03-21
      */
     @Transactional(rollbackFor = Exception.class)
-    public AppResponse deleteUser(String userCode,String userId) {
+    public AppResponse deleteUser(String userCode, String userId) {
         List<String> listCode = Arrays.asList(userCode.split(","));
-        AppResponse appResponse = AppResponse.success("删除成功！");
         // 删除用户
-        int count = demoDao.deleteUser(listCode,userId);
-        if(0 == count) {
-            appResponse = AppResponse.bizError("删除失败，请重试！");
+        int count = demoDao.deleteUser(listCode, userId);
+        if (0 == count) {
+            return AppResponse.bizError("删除失败，请重试！");
         }
-        return appResponse;
+        return AppResponse.success("删除成功！");
     }
 
     /**
      * demo 修改用户
+     *
      * @param userInfo
      * @return
      * @Author dingning
@@ -95,7 +99,7 @@ public class DemoService {
         AppResponse appResponse = AppResponse.success("修改成功");
         // 校验账号是否存在
         int countUserAcct = demoDao.countUserAcct(userInfo);
-        if(0 != countUserAcct) {
+        if (0 != countUserAcct) {
             return AppResponse.bizError("用户账号已存在，请重新输入！");
         }
         // 修改用户信息
@@ -110,6 +114,7 @@ public class DemoService {
 
     /**
      * demo 查询用户详情
+     *
      * @param userCode
      * @return
      * @Author dingning
@@ -117,7 +122,7 @@ public class DemoService {
      */
     public AppResponse getUserByUserCode(String userCode) {
         UserInfo userInfo = demoDao.getUserByUserCode(userCode);
-        return AppResponse.success("查询成功！",userInfo);
+        return AppResponse.success("查询成功！", userInfo);
     }
 }
 

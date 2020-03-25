@@ -36,7 +36,7 @@ public class DemoController {
      * @author dingning
      * @Date 2020-03-21
      */
-    @PostMapping("saveUser")
+    @PostMapping("/saveUser")
     public AppResponse saveUser(UserInfo userInfo) {
         try {
             //获取用户id
