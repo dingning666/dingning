@@ -29,5 +29,6 @@ dependencies {
 			'com.google.code.gson:gson:2.8.2',
 			'com.github.pagehelper:pagehelper-spring-boot-starter:1.2.3',
 			'org.apache.commons:commons-lang3:3.7',
-			'org.springframework.boot:spring-boot-starter-data-redis:2.1.13.RELEASE'
+			'org.springframework.boot:spring-boot-starter-data-redis',
+			'org.springframework.boot:spring-boot-starter-activemq'
 }

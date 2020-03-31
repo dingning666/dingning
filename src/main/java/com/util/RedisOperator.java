@@ -4,12 +4,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 @Component
 public class RedisOperator {
+
     @Autowired
     private StringRedisTemplate redisTemplate;
 
@@ -55,7 +57,7 @@ public class RedisOperator {
      *
      * @param key
      */
-    public void del(String key) {
+    public void del(List<String> key) {
         redisTemplate.delete(key);
     }
 
