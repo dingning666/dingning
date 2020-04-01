@@ -1,3 +1,4 @@
+/*
 package com.activcemq.customer;
 
 import org.springframework.jms.annotation.JmsListener;
@@ -12,3 +13,4 @@ public class TopicConsumerListener {
         System.out.println("topic接受到：" + message);
     }
 }
+*/

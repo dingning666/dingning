@@ -1,3 +1,4 @@
+/*
 package com.activcemq.producer;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,3 +41,4 @@ public class ProducerController {
         jmsMessagingTemplate.convertAndSend(destination, message);
     }
 }
+*/
