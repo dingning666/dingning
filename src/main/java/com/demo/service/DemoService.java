@@ -5,10 +5,10 @@ import com.demo.entity.UserInfo;
 import com.github.pagehelper.PageHelper;
 import com.util.AppResponse;
 import com.util.StringUtil;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.annotation.Resource;
 import java.util.Arrays;
 import java.util.List;
 
@@ -22,9 +22,8 @@ import com.github.pagehelper.PageInfo;
 @Service
 public class DemoService {
 
-    @Resource
+    @Autowired
     private DemoDao demoDao;
-
     /**
      * demo 新增用户
      *
@@ -33,7 +32,7 @@ public class DemoService {
      * @Author dingning
      * @Date 2020-03-21
      */
-    @Transactional(rollbackFor = Exception.class)
+    @Transactional(rollbackFor = Exception.class,timeout=36000)
     public AppResponse saveUser(UserInfo userInfo) {
         // 校验账号是否存在
         int countUserAcct = demoDao.countUserAcct(userInfo);

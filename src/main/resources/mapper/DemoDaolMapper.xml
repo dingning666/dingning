@@ -28,7 +28,8 @@
          create_by,
          gmt_modified,
          last_modified_by,
-         version)
+         version,
+         role)
         values
            (#{userCode},
             #{userName},
@@ -45,7 +46,8 @@
             #{createBy},
             now(),
             #{lastModifiedBy},
-            0)
+            0,
+            #{role})
     </insert>
 
     <!--用户列表-->

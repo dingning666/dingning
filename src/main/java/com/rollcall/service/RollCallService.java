@@ -2,13 +2,14 @@ package com.rollcall.service;
 
 import com.rollcall.dao.RollCallDao;
 import com.rollcall.entity.Student;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 
 @Service
 public class RollCallService {
-    @Resource
+    @Autowired
     private RollCallDao rollCallDao;
 
     /**

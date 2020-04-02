@@ -1,3 +1,4 @@
+/*
 package com.config;
 
 import org.apache.activemq.ActiveMQConnectionFactory;
@@ -69,3 +70,4 @@ public class ActivceMqConfig {
         return factory;
     }
 }
+*/

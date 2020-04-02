@@ -7,6 +7,7 @@ import com.util.AppResponse;
 import com.util.AuthUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -60,7 +61,7 @@ public class DemoController {
      * @author dingning
      * @Date 2020-03-21
      */
-    @RequestMapping(value = "listUsers")
+    @GetMapping(value = "listUsers")
     public AppResponse listUsers(UserInfo userInfo) {
         try {
             return demoService.listUsers(userInfo);

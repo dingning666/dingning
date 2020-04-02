@@ -82,6 +82,18 @@ public class UserInfo {
      * 版本号
      */
     private String version;
+    /**
+     * 角色
+     */
+    private int role;
+
+    public int getRole() {
+        return role;
+    }
+
+    public void setRole(int role) {
+        this.role = role;
+    }
 
     public int getPageSize() {
         return pageSize;

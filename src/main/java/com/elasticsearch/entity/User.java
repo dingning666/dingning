@@ -1,3 +1,4 @@
+/*
 package com.elasticsearch.entity;
 
 import org.springframework.data.annotation.Id;
@@ -6,22 +7,30 @@ import org.springframework.data.elasticsearch.annotations.Document;
 
 @Document(indexName = "user",type = "user")
 public class User {
-    /**
+    */
+/**
      * 用户代码
-     */
+     *//*
+
     @Id
     private String userCode;
-    /**
+    */
+/**
      * 用户名称
-     */
+     *//*
+
     private String userName;
-    /**
+    */
+/**
      * 用户登录名
-     */
+     *//*
+
     private String userAcct;
-    /**
+    */
+/**
      * 用户密码
-     */
+     *//*
+
     private String userPwd;
 
     public String getUserCode() {
@@ -57,4 +66,4 @@ public class User {
     }
 
 
-}
+}*/

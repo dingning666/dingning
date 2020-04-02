@@ -1,3 +1,4 @@
+/*
 package com.config;
 
 import com.dangdang.ddframe.rdb.sharding.api.ShardingDataSourceFactory;
@@ -27,32 +28,38 @@ import java.util.*;
 @Configuration
 @MapperScan(basePackages = "com.*.dao", sqlSessionTemplateRef = "test1SqlSessionTemplate")
 public class DataSourceConfig {
-    /**
+    */
+/**
      * 配置数据源0，数据源的名称最好要有一定的规则，方便配置分库的计算规则
      * @return
-     */
+     *//*
+
     @Bean(name="dataSource0")
     @ConfigurationProperties(prefix = "spring.datasource.db1")
     public DataSource dataSource0(){
         return DataSourceBuilder.create().build();
     }
-    /**
+    */
+/**
      * 配置数据源1，数据源的名称最好要有一定的规则，方便配置分库的计算规则
      * @return
-     */
+     *//*
+
     @Bean(name="dataSource1")
     @ConfigurationProperties(prefix = "spring.datasource.db2")
     public DataSource dataSource1(){
         return DataSourceBuilder.create().build();
     }
 
-    /**
+    */
+/**
      * 配置数据源规则，即将多个数据源交给sharding-jdbc管理，并且可以设置默认的数据源，
      * 当表没有配置分库规则时会使用默认的数据源
      * @param dataSource0
      * @param dataSource1
      * @return
-     */
+     *//*
+
     @Bean
     public DataSourceRule dataSourceRule(@Qualifier("dataSource0") DataSource dataSource0,
                                          @Qualifier("dataSource1") DataSource dataSource1){
@@ -62,11 +69,13 @@ public class DataSourceConfig {
         return new DataSourceRule(dataSourceMap, "dataSource0"); //设置默认库，两个库以上时必须设置默认库。默认库的数据源名称必须是dataSourceMap的key之一
     }
 
-    /**
+    */
+/**
      * 配置数据源策略和表策略，具体策略需要自己实现
      * @param dataSourceRule
      * @return
-     */
+     *//*
+
     @Bean
     public ShardingRule shardingRule(DataSourceRule dataSourceRule){
         //具体分库分表策略
@@ -88,22 +97,26 @@ public class DataSourceConfig {
                 .build();
     }
 
-    /**
+    */
+/**
      * 创建sharding-jdbc的数据源DataSource，MybatisAutoConfiguration会使用此数据源
      * @param shardingRule
      * @return
      * @throws SQLException
-     */
+     *//*
+
     @Bean(name="dataSource")
     public DataSource shardingDataSource(ShardingRule shardingRule) throws SQLException {
         return ShardingDataSourceFactory.createDataSource(shardingRule);
     }
 
-    /**
+    */
+/**
      * 需要手动配置事务管理器
      * @param dataSource
      * @return
-     */
+     *//*
+
     @Bean
     public DataSourceTransactionManager transactitonManager(@Qualifier("dataSource") DataSource dataSource){
         return new DataSourceTransactionManager(dataSource);
@@ -124,3 +137,4 @@ public class DataSourceConfig {
         return new SqlSessionTemplate(sqlSessionFactory);
     }
 }
+*/
